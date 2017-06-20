@@ -1,0 +1,10 @@
+
+.squares {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    float: left;
+    /*clear: both;*/
+}
+
