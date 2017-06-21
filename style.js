@@ -34,6 +34,21 @@ firstButton.addEventListener('click', function() {
         this.style.backgroundColor = randomColor();
         console.log(randomColor);
     });
+
+    squares.addEventListener('dblclick', function() {
+        if (squares.id % 2 === 0) {
+            //element after square removed
+            console.log(true);
+        }
+        else  {
+            //element before square removed
+            console.log(false);
+        }
+    })
+
+
+
+
 });
 
 // random color generator
@@ -43,4 +58,20 @@ function randomColor(){
        s += allowed.splice( Math.floor( ( Math.random() * allowed.length ) ), 1 );
     }
     return s;
+}
+
+function isEven(n) {
+   return n % 2 == 0;
+}
+
+function isOdd(n) {
+   return Math.abs(n % 2) == 1;
+}
+
+function isEven(num) {
+    if (num % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
