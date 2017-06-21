@@ -12,13 +12,15 @@ var firstButton = document.createElement('button');
 document.body.appendChild(firstButton);
 var squares = ('div');
 var numberOfSquares = document.getElementsByTagName(squares);
-
+var squaresArray = []; //stores all of my divs in an array
 
 firstButton.addEventListener('click', function() {
     var squares = document.createElement('div');
     squares.className = ('squares');
     squares.id = (numberOfSquares.length);
+    squaresArray.push(squares);
     document.body.appendChild(squares);
+    console.log(squaresArray);
     squares.addEventListener('mouseover', mouseOver);
     squares.addEventListener('mouseout', mouseOut);
     function mouseOver () {
@@ -32,14 +34,19 @@ firstButton.addEventListener('click', function() {
     squares.addEventListener('click', function() {
         // this.className = ('newColor');
         this.style.backgroundColor = randomColor();
-        console.log(randomColor);
     });
 
     squares.addEventListener('dblclick', function() {
+        var i = squares.id;
         if (squares.id % 2 === 0) {
+            i++;
+            console.log(squaresArray);
             //element after square removed
+            
             console.log(true);
+
         }
+
         else  {
             //element before square removed
             console.log(false);
@@ -60,18 +67,3 @@ function randomColor(){
     return s;
 }
 
-function isEven(n) {
-   return n % 2 == 0;
-}
-
-function isOdd(n) {
-   return Math.abs(n % 2) == 1;
-}
-
-function isEven(num) {
-    if (num % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
