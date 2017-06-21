@@ -18,26 +18,26 @@ firstButton.addEventListener('click', function() {
     squares.className = ('squares');
     squares.id = (numberOfSquares.length);
     document.body.appendChild(squares);
-    squares.innerText = squares.id;
-    squares.addEventListener('mouseover', mouseOver)
+    squares.addEventListener('mouseover', mouseOver);
     squares.addEventListener('mouseout', mouseOut);
     function mouseOver () {
-       squares.style.opacity = '1';
+        squares.innerText = squares.id;
+        //find less lazy way to do this. Opacity?
     };
     function mouseOut () {
-        squares.style.opacity = '0';
+        squares.innerText = "";
     };
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    //change background color not working
+    squares.addEventListener('click', function() {
+        squares.style.backgroundColor = (randomColor);
+        console.log(randomColor);
+    });
 })
-
 
 
 
 var squares = ('div');
 
 var numberOfSquares = document.getElementsByTagName(squares);
-var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-
-// squares.addEventListener('click', function() {
-//     squares.style.backgroundColor = randomColor;
-//     });
