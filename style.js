@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 });
-
+//Global Var
 var firstButton = document.createElement('button');
     firstButton.className = ('firstButton');
     firstButton.style.border = '2px solid green';
@@ -10,7 +10,8 @@ var firstButton = document.createElement('button');
     firstButton.style.margin = '30px';
     firstButton.style.float = 'left';
 document.body.appendChild(firstButton);
-
+var squares = ('div');
+var numberOfSquares = document.getElementsByTagName(squares);
 
 
 firstButton.addEventListener('click', function() {
@@ -27,17 +28,19 @@ firstButton.addEventListener('click', function() {
     function mouseOut () {
         squares.innerText = "";
     };
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    //change background color not working
+
     squares.addEventListener('click', function() {
-        squares.style.backgroundColor = (randomColor);
+        // this.className = ('newColor');
+        this.style.backgroundColor = randomColor();
         console.log(randomColor);
     });
-})
+});
 
-
-
-var squares = ('div');
-
-var numberOfSquares = document.getElementsByTagName(squares);
-
+// random color generator
+function randomColor(){
+    var allowed = "0369cf".split( '' ), s = "#";
+    while ( s.length < 4 ) {
+       s += allowed.splice( Math.floor( ( Math.random() * allowed.length ) ), 1 );
+    }
+    return s;
+}

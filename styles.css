@@ -1,11 +1,22 @@
 
 .squares {
     background-color: black;
-    width: 200px;
-    height: 200px;
+    width: 75px;
+    height: 75px;
     margin: 15px;
+    padding: 100px;
     float: left;
     color: white;
+    text-align: center;
     /*clear: both;*/
 }
 
+.newColor {
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    padding: 100px;
+    float: left;
+    color: white;
+    text-align: center;
+}
