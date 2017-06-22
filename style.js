@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 //Global Var
+//breaks project if in DOMContentLoaded
 var firstButton = document.createElement('button');
     firstButton.className = ('firstButton');
     firstButton.style.border = '2px solid green';
@@ -29,7 +30,6 @@ firstButton.addEventListener('click', function() {
         squares.innerText = "";
     };
     squares.addEventListener('click', function() {
-        // this.className = ('newColor');
         this.style.backgroundColor = randomColor();
     });
     squares.addEventListener('dblclick', function() {
